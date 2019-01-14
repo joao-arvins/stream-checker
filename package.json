@@ -8,15 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joao-arvins/video-consume.git"
+    "url": "git+https://github.com/joao-arvins/stream-checker.git"
   },
   "author": "joao.arvins@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/joao-arvins/video-consume/issues"
+    "url": "https://github.com/joao-arvins/stream-checker/issues"
   },
-  "homepage": "https://github.com/joao-arvins/video-consume#readme",
+  "homepage": "https://github.com/joao-arvins/stream-checker#readme",
   "devDependencies": {
-    "serverless": "^1.36.1"
+    "serverless": "^1.36.1",
+    "serverless-offline": "^3.33.0"
   }
 }
