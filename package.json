@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "deploy": " serverless deploy"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,11 @@
   },
   "homepage": "https://github.com/joao-arvins/stream-checker#readme",
   "devDependencies": {
+    "jest": "^23.6.0",
     "serverless": "^1.36.1",
     "serverless-offline": "^3.33.0"
+  },
+  "dependencies": {
+    "uuid": "^3.3.2"
   }
 }

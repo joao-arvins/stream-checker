@@ -1,0 +1,17 @@
+{
+    "resource": "/stream-record",
+    "path": "/stream-record",
+    "httpMethod": "POST",
+    "headers": {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate, br"
+    },
+    "multiValueHeaders": {},
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "pathParameters": null,
+    "stageVariables": null,
+    "requestContext": {},
+    "body": "{\"userId\" : \"1new\", \"streamId\" : \"2new\"}",
+    "isBase64Encoded": false
+}
