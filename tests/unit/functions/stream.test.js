@@ -12,16 +12,29 @@ describe('Adding a new record stream', () => {
 
     describe('When the record is successfully added', () => {
         beforeEach(async () => {
+            addRecordSpy.and.returnValue(true);
             await add(testPayload, {}, callback);
             output = callback.mock.calls[0][1];
         });
 
-        it('A 200 response code is returned', () => {
+        it('A 201 - CREATED response code is returned', () => {
             expect(output.statusCode).toEqual(201);
         });
     });
 
-    describe('When adding a record fails', () => {
+    describe('When the record is not added', () => {
+        beforeEach(async () => {
+            addRecordSpy.and.returnValue(false);
+            await add(testPayload, {}, callback);
+            output = callback.mock.calls[0][1];
+        });
+
+        it('A 403 - Forbidden response code is returned', () => {
+            expect(output.statusCode).toEqual(403);
+        });
+    });
+
+    describe('When an error is thrown', () => {
         beforeEach(async () => {
             addRecordSpy.and.callFake(() => {
                 throw new Error();
