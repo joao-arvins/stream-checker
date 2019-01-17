@@ -1,16 +1,21 @@
 'use strict';
 
+const streamRecordService = require('../services/streamRecordService');
+
 module.exports.add = async (event, context, callback) => {
-  const response = {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: 'Go Serverless v1.0! Your function executed successfully!',
-      input: event,
-    }),
-  };
-
-  callback(null, response);
-
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
+  let { userId, streamId } = JSON.parse(event.body);
+  try {
+    const addRecordResult = await streamRecordService.addRecord(userId, streamId);
+    const response = {
+      statusCode: 201,
+      body: JSON.stringify(addRecordResult),
+    };
+    callback(null, response);
+  }
+  catch(e) {
+    callback(null, {
+      statusCode: 500,
+      body: JSON.stringify(e)
+    });
+  }
 };
