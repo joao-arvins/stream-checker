@@ -17,7 +17,7 @@ describe('Adding a new record stream', () => {
         });
 
         it('A 200 response code is returned', () => {
-            expect(output.statusCode).toEqual(200);
+            expect(output.statusCode).toEqual(201);
         });
     });
 

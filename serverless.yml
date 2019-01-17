@@ -24,7 +24,7 @@ provider:
   region: eu-west-2
   environment:
     STREAMS_TABLE: ${self:service}-${opt:stage, self:provider.stage}
-    MAX_STREAM_ALLOWANCE: 3
+    MAX_STREAMS_COUNT: 3
   iamRoleStatements:
     - Effect: Allow
       Action:
