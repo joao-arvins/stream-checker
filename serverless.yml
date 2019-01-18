@@ -47,6 +47,3 @@ resources:
         StreamSpecification:
           StreamViewType: "NEW_AND_OLD_IMAGES"
         TableName: ${self:provider.environment.STREAMS_TABLE}
-
-plugins:
-  - serverless-offline
