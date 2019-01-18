@@ -4,10 +4,6 @@ const dbAdapter = require('../../../src/data/dynamoAdapter');
 describe('Adding a new record stream', () => {
     let activeStreamsCountSpy, addRecordResult;
 
-    beforeAll(() => {
-        process.env.MAX_STREAMS_COUNT = 3;
-    });
-
     beforeEach(() => {
         spyOn(dbAdapter, 'addStreamRecord').and.returnValue(true);
         activeStreamsCountSpy = spyOn(dbAdapter, 'getNumberOfActiveStreamsByUser');
