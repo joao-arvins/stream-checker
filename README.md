@@ -25,7 +25,7 @@ npm test
 NOTE: The integration tests are using the deployed Dynamo DB so before running them the first time a deployment is needed. In order to do that run:
 
 ```
-npm deploy
+npm run deploy
 ```
 
 # Scalability Strategy
