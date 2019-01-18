@@ -7,12 +7,11 @@ const addRecord = async (userId, streamId) => {
     let activeStreamCount = await dbAdapter.getNumberOfActiveStreamsByUser(userId);
 
     if(activeStreamCount >= process.env.MAX_STREAMS_COUNT) {
-        return false;
+        return;
     }
 
     let streamRecord = new StreamRecord(userId, streamId);
-    await dbAdapter.addStreamRecord(streamRecord);
-    return true;
+    return await dbAdapter.addStreamRecord(streamRecord);
 }
 
 module.exports = {

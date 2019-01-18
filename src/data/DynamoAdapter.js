@@ -26,7 +26,7 @@ const addStreamRecord = (streamRecord) => {
       
       return dynamoDb.put(params)
         .promise()
-        .then(res => true);
+        .then(res => streamRecord);
 }
 
 module.exports = {

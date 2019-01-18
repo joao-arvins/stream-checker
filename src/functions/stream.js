@@ -18,15 +18,16 @@ module.exports.add = async (event, context, callback) => {
   }
 
   try {
-    const recordAdded = await streamRecordService.addRecord(body.userId, body.streamId);
+    const record = await streamRecordService.addRecord(body.userId, body.streamId);
     
     let message = `Adding stream record for user ${body.userId} and stream ${body.streamId}. 
-      Result: ${recordAdded ? 'Added' : 'Not Added'}`;
+      Result: ${record ? `Added: ${record.id}` : 'No record was created'}`;
       
     log.info(message, body);
 
     callback(null, {
-      statusCode: recordAdded ? 201 : 403
+      statusCode: record ? 201 : 403,
+      body: JSON.stringify(record)
     });
   }
   catch(e) {
