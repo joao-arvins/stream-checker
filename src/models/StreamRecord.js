@@ -7,6 +7,5 @@ module.exports = class StreamRecord {
         this.id = uuidv4();
         this.userId = userId;
         this.streamId = streamId;
-        this.active = active;
     }
 }
